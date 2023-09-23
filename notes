@@ -1,0 +1,65 @@
+// pip install pipenv
+
+// pipenv shell
+
+// pip install django
+
+// django-admin startproject saadhath_project .
+
+// i created a database in mysql and named django_ecommerce
+
+// then i changed DATABASE settings in settings.py in saadhath_project like below
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'django_ecommerce',
+        'HOST': 'localhost',
+        'USER': 'root',
+        'PASSWORD': '',
+        'PORT': '3306',
+    }
+}
+
+// python manage.py startapp shop
+
+// i added the shop in the installed app in settings.py in saadhath_project like below
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'shop'
+]
+
+// python manage.py runserver
+
+// i created a file named urls.py in shop file
+
+// then i add include in urls.py in saadhath_project and i add path in urlpatterns like below
+// from django.urls import path,include
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', include('shop.urls')),
+]
+
+// then i created a folder named templates in shop folder
+
+// then i created a folder named shop in templates file
+
+// then i created a file named index.html in shop folder of templates
+
+// then i wrote this in view.py of shop folder
+// # Create your views here.
+// def home(request):
+//    return render(request,'shop/index.html')
+
+// after that i creates a new urlpatterns in shop's urls.py
+urlpatterns= [
+    path()
+]
+
+// i created media_url and media_route under static_url in settings.py like below
+MEDIA_URL = '/images/'
+MEDIA_ROUTE = BASE_DIR/'static'
